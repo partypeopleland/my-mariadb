@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    mariadb:
+        image: 'docker.io/bitnami/mariadb:10.5-debian-10'
+        restart: always
+        container_name: mariadb
+        ports:
+            - '3306:3306'
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+            - MARIADB_ROOT_PASSWORD=password
+            - MARIADB_USER=my_user
+            - MARIADB_PASSWORD=my_password
+            - MARIADB_DATABASE=my_database
